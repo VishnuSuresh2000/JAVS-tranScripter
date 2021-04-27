@@ -1,7 +1,7 @@
 # JAVS-tranScripter
-## Artifical Level Language
+## Artificial Level Language
 
-Artifical Level Langauge is an new form of idea which basicly understand the natural langauge in the computer.
+Artificial Level Langauge is an new form of idea which basicly understand the natural langauge in the computer.
 
 \* There are some theory are not explane now as on development.
 
@@ -11,7 +11,7 @@ Artifical Level Langauge is an new form of idea which basicly understand the nat
 ___
 ___
 ## Achu's Programming Language
-It is not a language, it is set of rules that to flow to make a tranScripter or transCompiler which can define the Artifical Level Language (In simple words to support natural language).
+It is not a language, it is set of rules that to flow to make a tranScripter or transCompiler which can define the Artificial Level Language (In simple words to support natural language).
 
 \* As it on development simple explantion is given. 
 ___
