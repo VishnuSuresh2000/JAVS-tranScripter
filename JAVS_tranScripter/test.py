@@ -6,8 +6,9 @@
 tempString="add $v1, $v2"
 
 def addFun(*args):
-    for identifer in args:
-        print(identifer)
+    # for identifer in args:
+    #     print(identifer)
+    print(" ".join([f'{x} +' for x in args]))
 # tempinput=tempString.strip(" ")
 
 def commaRepalce(stringInput):
