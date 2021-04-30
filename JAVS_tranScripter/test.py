@@ -9,11 +9,23 @@ def addFun(*args):
     # for identifer in args:
     #     print(identifer)
     print(" ".join([f'{x} +' for x in args]))
-# tempinput=tempString.strip(" ")
+
 
 def commaRepalce(stringInput):
     return stringInput.replace(","," and")
 
-print(commaRepalce(tempString))
+# print(commaRepalce(tempString))
+tempinput=commaRepalce(tempString).split(" ")
+grap=[]
+print(tempinput)
+for word in tempinput:
+    if word == "add":
+        grap.append(word)
+    elif word =="and" :
+        if "$" in grap[-1]:
+            pass
+
+
+
 
 # addFun("a","v")
