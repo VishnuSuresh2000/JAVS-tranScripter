@@ -1,5 +1,5 @@
 import os
-from JAVSutil import JAVSExceptions
+from .JAVSutil import JAVSExceptions
 import sys
 # import numpy as np
 
