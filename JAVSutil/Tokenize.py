@@ -13,6 +13,7 @@ class Tokenize:
     @staticmethod 
     def checkAllWordsInEnv(words_list,env_words):
         for word in words_list:
-            if word not in env_words:
+            if word not in env_words and "$" not in word and not str(word).isnumeric:
                 raise JAVSExceptions.WordNotFound(Word=word)
+            
                 
