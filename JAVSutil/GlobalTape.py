@@ -1,5 +1,5 @@
 import numpy as np
-from . import CustomTree
+from .customTree import CustomTree
 
 
 class GlobalTape:
@@ -39,4 +39,4 @@ class GlobalTape:
         except StopIteration:
             if show_logs  : print("\nEnd of All the lines\n")
             if show_logs  : print("\nGlobal Tape :-\n", global_Tape)
-            pass
+        return global_Tape

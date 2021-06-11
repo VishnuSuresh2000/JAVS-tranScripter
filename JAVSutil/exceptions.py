@@ -1,5 +1,5 @@
 class JAVSError(Exception):
-    staticMessage = "JAVS-tranScripter-Error"
+    staticMessage = "JAVS Error :- "
     def __init__(self,message="Custom JAVS Error"):
         self.message=self.staticMessage+" "+message
         # print(self.message)

@@ -1,3 +1,5 @@
 \.vscode
 \.empty
+*.temp.py
+*.generated.py
 

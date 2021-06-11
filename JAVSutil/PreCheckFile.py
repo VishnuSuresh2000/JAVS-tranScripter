@@ -1,9 +1,9 @@
-from . import JAVSExceptions
+from .exceptions import *
 class PreCheckFile:
     @staticmethod
     def load(file_path):
-        if not str(file_path).isnumeric: raise JAVSExceptions.FileNotFountError()
-        if ".ai" not in file_path: raise JAVSExceptions.ExtensionError()
+        if not str(file_path).isnumeric: raise FileNotFountError()
+        if ".ai" not in file_path: raise ExtensionError()
         try:
             with open(file_path) as file:
                 return file.read()

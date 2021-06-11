@@ -13,3 +13,11 @@ class Machine:
                     if result is not None:
                         pythonCode.append(result)
         return pythonCode
+    @staticmethod
+    def executePyCode(code):
+        exec("\n".join(code))
+    @staticmethod
+    def generatePyFile(filename,code):
+        with open(file=f'{filename}.generated.py',mode="w") as f:
+            f.writelines("\n".join(code))
+            print("Python Code Generted")
