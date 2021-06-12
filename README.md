@@ -64,7 +64,7 @@ It is not a language, it is set of rules that to flow to make a tranScripter or 
 
 \* As it on development simple explanation is given. 
 
-\* File Extenstion is ".ai"
+\* File Extension is ".ai"
 ___
 ___
 # JAVS-tranScripter
