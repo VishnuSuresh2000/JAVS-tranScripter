@@ -15,14 +15,14 @@ class Tokenize:
 
     @staticmethod
     def checkAllWordsInEnv(words_list, env_words):
-        variableFlage=False
+        variableFlag=False
         for word in words_list:
             # if word not in env_words and "$" not in word and not str(word).isnumeric:
             #     raise WordNotFound(Word=word)
             if '$' in word: 
-                variableFlage=True
-            elif variableFlage:
-                variableFlage=False
+                variableFlag=True
+            elif variableFlag:
+                variableFlag=False
             elif (word not in env_words) and (not str(word).isnumeric()) and ("." not in word):
                 raise WordNotFound(Word=word)
 

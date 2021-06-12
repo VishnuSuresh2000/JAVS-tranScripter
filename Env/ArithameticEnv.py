@@ -9,8 +9,8 @@ class ArithameticEnv:
     @staticmethod
     def addFun(*args):
         result = " ".join(
-            ["result =", *[f'{x if "$" not in x else x[1:]} +' for x in args]])
-        result = result[:-1]
+            [*[f'{x if "$" not in x else x[1:]} +' for x in args]])
+        result = f'result =int({result[:-1]})'
         return result
 
     @staticmethod
@@ -23,8 +23,8 @@ class ArithameticEnv:
     @staticmethod
     def divideFun(*args):
         result = " ".join(
-            ["result =", *[f'{x if "$" not in x else x[1:]} /' for x in reversed(args)]])
-        result = result[:-1]
+            [*[f'{x if "$" not in x else x[1:]} /' for x in reversed(args)]])
+        result = f'result =int({result[:-1]})'
         return result
 
     @staticmethod
