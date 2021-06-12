@@ -56,7 +56,7 @@ class ArithmeticEnv:
 
     @staticmethod
     def commaFun(*args):
-        ArithmeticEnv.andFun(*args)
+        return ArithmeticEnv.andFun(*args)
 
     @staticmethod
     def byFun(*args):
@@ -70,7 +70,7 @@ class ArithmeticEnv:
 
     @staticmethod
     def displayFun(*args):
-        ArithmeticEnv.printFun(*args)
+        return ArithmeticEnv.printFun(*args)
 
     '''
     env_variables :- is a list of variables which act a variables with out '$' in the program
