@@ -25,10 +25,11 @@ def main(path, print_log=False, generate_Python_code=False):
         pyCode = Machine.generatePythonCode(tape, ArithmeticEnv)
         if print_log:
             print("Python Code :- ", "\n".join(pyCode))
+        
+        Machine.executePyCode(pyCode)
         if generate_Python_code:
             Machine.generatePyFile(os.path.split(
                 "main/document/main.ai")[-1][:-3], pyCode)
-        Machine.executePyCode(pyCode)
     except JAVSError as jerror:
         print(jerror)
     except Exception as e:

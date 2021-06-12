@@ -23,4 +23,4 @@ class Machine:
     def generatePyFile(filename,code):
         with open(file=f'{filename}.generated.py',mode="w") as f:
             f.writelines("\n".join(code))
-            print("Python Code Generated")
+            print("**** Python Code Generated ****")
