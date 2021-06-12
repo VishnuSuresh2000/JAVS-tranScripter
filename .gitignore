@@ -2,4 +2,6 @@
 \.empty
 *.temp.py
 *.generated.py
+*__pycache__*
 
+*.pyc
