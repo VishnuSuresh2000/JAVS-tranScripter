@@ -1,4 +1,4 @@
-class CustomTree():
+class RightHandTree():
     def __init__(self):
         self.left=None
         self.right=None
@@ -9,13 +9,13 @@ class CustomTree():
             self.data=value
         elif self.right is None:
             # print("right is none ",value)
-            self.right=CustomTree()
+            self.right=RightHandTree()
             self.right.insertNode(value=value)
         else:
             if "$" in self.right.data:
                 # print("right is not none and $ ",value)
                 temp=self.right
-                self.right=CustomTree()
+                self.right=RightHandTree()
                 self.right.insertNode(value=value)
                 self.right.left=temp
             else:

@@ -1,5 +1,5 @@
 import numpy as np
-from .customTree import CustomTree
+from .rightHandTree import RightHandTree
 
 
 class GlobalTape:
@@ -26,7 +26,7 @@ class GlobalTape:
                     if end_Of_a_Sentence:
                         if show_logs  : print("\nStarting of a sentence\n")
                         end_Of_a_Sentence = False
-                        node = CustomTree()
+                        node = RightHandTree()
                     elif catch_variable_value:
                         catch_variable_value = False
                         current_Word = "$"+current_Word
