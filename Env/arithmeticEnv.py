@@ -1,9 +1,9 @@
-class ArithameticEnv:
+class ArithmeticEnv:
     def __init__(self):
         pass
     '''
     Word As Function :- In here each word is assigned to an python function, which returns an python code as a string.
-    In some senarous some words have no functionalites in that case return "None"
+    In some sonorous some words have no functionalities in that case return "None"
 
     '''
     @staticmethod
@@ -38,6 +38,10 @@ class ArithameticEnv:
         else:
             raise Exception("Only One variable and one Integer is support")
 
+
+    
+
+
     @staticmethod
     def toFun(*args):
         return None
@@ -52,28 +56,33 @@ class ArithameticEnv:
 
     @staticmethod
     def commaFun(*args):
-        ArithameticEnv.andFun(*args)
+        ArithmeticEnv.andFun(*args)
 
     @staticmethod
     def byFun(*args):
         return None
 
     @staticmethod
-    def printfun(*args):
+    def printFun(*args):
         result = " ".join(
             ["print(", *[f'{x if "$" not in x else x[1:]}' for x in args], ")"])
         return result
 
+    @staticmethod
+    def displayFun(*args):
+        ArithmeticEnv.printFun(*args)
+
     '''
-    env_variables :- is a list of variables which act a variables with out '$' in the programe
+    env_variables :- is a list of variables which act a variables with out '$' in the program
 
     '''
     env_Variables = ["result"]
 
     '''
-    env_Words_and_WordAsFunction :- is a key value paired Dictonary which each key corresponds to word that accepeted by the ENV
+    env_Words_and_WordAsFunction :- is a key value paired Dictionary which each key corresponds to word that accepted by the ENV
     and the value is the function that defined 
 
     '''
-    env_Words_and_WordAsFunction = {"add": addFun.__func__, "and": andFun.__func__, ",": commaFun.__func__, "print": printfun.__func__,
-                                    "multiply": multiplyFun.__func__, "store": storeFun.__func__, "to": toFun.__func__, "in": inFun.__func__, "divide": divideFun.__func__, "by": byFun.__func__}
+    env_Words_and_WordAsFunction = {"add": addFun.__func__, "and": andFun.__func__, ",": commaFun.__func__, "print": printFun.__func__,
+                                    "multiply": multiplyFun.__func__, "store": storeFun.__func__, "to": toFun.__func__, "in": inFun.__func__, "divide": divideFun.__func__, "by": byFun.__func__,
+                                    "display":displayFun.__func__}
