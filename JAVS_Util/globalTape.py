@@ -6,18 +6,18 @@ class GlobalTape:
     @staticmethod
     def make(tokenize_Input: np.array,env, show_logs: bool = False):
         global_Tape = []
-        itreate_each_word = iter(tokenize_Input)
+        iterate_each_word = iter(tokenize_Input)
         catch_variable_value = False
         end_Of_a_Sentence = True
         node = None
         try:
             while True:
-                current_Word = next(itreate_each_word)
+                current_Word = next(iterate_each_word)
                 if "$" == current_Word and not catch_variable_value:
                     catch_variable_value = True
                 elif "." == current_Word and not end_Of_a_Sentence:
                     end_Of_a_Sentence = True
-                    if show_logs  : print("\nCustom Tree Stracture of the current Sentence :- \n") 
+                    if show_logs  : print("\nCustom Tree Structure of the current Sentence :- \n") 
                     if show_logs  : node.PrintTree()
                     tape = node.makeTape()
                     global_Tape.append(tape)

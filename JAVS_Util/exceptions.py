@@ -8,7 +8,7 @@ class JAVSError(Exception):
 
 class ExtensionError(JAVSError):
     def __init__(self):
-        self.message="Extenstion Error, Check the Extension as .ai"
+        self.message="Extension Error, Check the Extension as .ai"
         # print(self.message)
         super().__init__(self.message)
 
@@ -20,7 +20,7 @@ class FileNotFountError(JAVSError):
 
 class WordNotFound(JAVSError):
     def __init__(self,Word):
-        self.message=f"{Word} Word Not Found In Env"
+        self.message=f"{Word} Word Not Found In Environment"
         # print(self.message)
         super().__init__(self.message)
 
@@ -31,10 +31,10 @@ class FilePathError(JAVSError):
 
 class NLTKError(JAVSError):
     def __init__(self):
-         self.message=f"NLTK Module Error, Plese Check the internet Connection"
+         self.message=f"NLTK Module Error, Please Check the internet Connection"
          super().__init__(self.message)
 
 class DotError(JAVSError):
     def __init__(self,line):
-         self.message=f"End of the Line or Dot not Present at Line {line}"
+         self.message=f"End of the Line or '.' not Present in the Line - {line}"
          super().__init__(self.message)
