@@ -41,6 +41,9 @@ class ArithmeticEnv:
     @staticmethod
     def theFun(*args):
         return None
+    @staticmethod
+    def thenFun(*args):
+        return None
 
     @staticmethod
     def toFun(*args):
@@ -85,4 +88,4 @@ class ArithmeticEnv:
     '''
     env_Words_and_WordAsFunction = {"add": addFun.__func__, "and": andFun.__func__, ",": commaFun.__func__, "print": printFun.__func__,
                                     "multiply": multiplyFun.__func__, "store": storeFun.__func__, "to": toFun.__func__, "in": inFun.__func__, "divide": divideFun.__func__, "by": byFun.__func__,
-                                    "display": displayFun.__func__, "the": theFun.__func__}
+                                    "display": displayFun.__func__, "the": theFun.__func__,'then':thenFun.__func__}
