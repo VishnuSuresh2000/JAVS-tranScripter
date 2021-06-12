@@ -39,9 +39,9 @@ python javs.py main.ai -l
 ## Sample Input 
 
 ```
-Store 2 in $v1 .
+Store 2 in $v1 then add 3 with $v1 and print the result .
 Add 3, 5 and $v1 .
-Print result.
+Print the result.
 Divide result by 4 and the display result.
 ```
 
