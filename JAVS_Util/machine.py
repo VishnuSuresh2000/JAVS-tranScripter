@@ -2,16 +2,19 @@ class Machine:
     @staticmethod
     def generatePythonCode(global_Tape,env):
         pythonCode=[]
-        varibleBuffer=[]
+        variableBuffer=[]
         for sentenceTape in global_Tape:
-            varibleBuffer=[]
+            variableBuffer=[]
+            pythonCodeSentence=[]
             for word in reversed(sentenceTape):
                 if "$" in word :
-                    varibleBuffer.append(word)
+                    variableBuffer.append(word)
                 else:
-                    result=env.env_Words_and_WordAsFunction[word](*varibleBuffer)
+                    result=env.env_Words_and_WordAsFunction[word](*variableBuffer)
                     if result is not None:
-                        pythonCode.append(result)
+                        pythonCodeSentence=[result,*pythonCodeSentence]
+                        variableBuffer=[]
+            pythonCode=[*pythonCode,*pythonCodeSentence]
         return pythonCode
     @staticmethod
     def executePyCode(code):
@@ -20,4 +23,4 @@ class Machine:
     def generatePyFile(filename,code):
         with open(file=f'{filename}.generated.py',mode="w") as f:
             f.writelines("\n".join(code))
-            print("Python Code Generted")
+            print("Python Code Generated")
