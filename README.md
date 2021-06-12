@@ -36,6 +36,15 @@ python javs.py main.ai -l
 ```
 ---
 
+## Sample Input 
+
+```
+Store 2 in $v1 .
+Add 3, 5 and $v1 .
+Print result.
+Divide 4 by 2 .
+Print result.
+```
 
 
 # Artificial Level Language
