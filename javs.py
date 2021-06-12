@@ -11,7 +11,7 @@ from Env.arithmeticEnv import ArithmeticEnv
 def main(path, print_log=False, generate_Python_code=False):
     try:
         input_string = PreCheckFile.load(path)
-        # Tokenize.initNLTK()
+        Tokenize.initNLTK()
         tokenize = Tokenize.make(input_string)
         if print_log:
             print("Tokenized Input :- ", tokenize)

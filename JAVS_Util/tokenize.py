@@ -6,7 +6,7 @@ from .exceptions import *
 class Tokenize:
     @staticmethod
     def initNLTK():
-        if not nltk.download('punkt'):
+        if not nltk.download('punkt',quiet=True):
             raise NLTKError()
 
     @staticmethod

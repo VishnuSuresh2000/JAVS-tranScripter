@@ -33,3 +33,8 @@ class NLTKError(JAVSError):
     def __init__(self):
          self.message=f"NLTK Module Error, Plese Check the internet Connection"
          super().__init__(self.message)
+
+class DotError(JAVSError):
+    def __init__(self,line):
+         self.message=f"End of the Line or Dot not Present at Line {line}"
+         super().__init__(self.message)
