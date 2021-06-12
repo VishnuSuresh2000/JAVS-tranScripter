@@ -11,7 +11,8 @@ class Tokenize:
 
     @staticmethod
     def make(input_string):
-        return np.array(nltk.word_tokenize(input_string))
+
+        return np.array(nltk.word_tokenize(str(input_string).lower()))
 
     @staticmethod
     def checkAllWordsInEnv(words_list, env_words):

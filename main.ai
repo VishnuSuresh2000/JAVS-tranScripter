@@ -1,5 +1,5 @@
-store 2 in $v1 .
-add 3, 5 and $v1 .
-print result.
-divide 4 by 2 .
-print result.
+Store 2 in $v1 .
+Add 3, 5 and $v1 .
+Print result.
+Divide 4 by 2 .
+Print result.
