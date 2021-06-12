@@ -42,8 +42,7 @@ python javs.py main.ai -l
 Store 2 in $v1 .
 Add 3, 5 and $v1 .
 Print result.
-Divide 4 by 2 .
-Print result.
+Divide result by 4 and the display result.
 ```
 
 
