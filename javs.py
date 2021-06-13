@@ -25,7 +25,7 @@ def main(path, print_log=False, generate_Python_code=False):
         pyCode = Machine.generatePythonCode(tape, ArithmeticEnv)
         if print_log:
             print("Python Code :- ", "\n".join(pyCode))
-        
+
         Machine.executePyCode(pyCode)
         if generate_Python_code:
             Machine.generatePyFile(os.path.split(
@@ -38,23 +38,40 @@ def main(path, print_log=False, generate_Python_code=False):
 
 if __name__ == "__main__":
     arguments = sys.argv[1:]
-    filePath=None
-    generatePyCode=False
-    show_logs=False
+    if len(arguments) == 0:
+        print('''JAVS-tranScripter for Achu's Programming Langauge, a branch which Support Artificial language.
+**** Research based project, Not For Production in line Product. ****
+Four more documention https://github.com/VishnuSuresh2000/JAVS-tranScripter
+\n.ai file not found.\n
+Command  :- 
+        javs [file_name.ai] -[flag]
+
+        example :- javs main.ai
+
+        if using python use the commaned :- python javs.py [file_name.ai] -[flag]
+
+        flag :- 
+                p := To generate Python code
+
+                l := To generate Log in command Line
+''')
+    filePath = None
+    generatePyCode = False
+    show_logs = False
     for argument in arguments:
-        
+
         if ("-lp" in argument) or ("-pl" in argument):
-            generatePyCode=True
-            show_logs=True
+            generatePyCode = True
+            show_logs = True
         elif "-p" in argument:
-            generatePyCode=True
+            generatePyCode = True
         elif "-l" in argument:
-            show_logs=True
+            show_logs = True
         elif ".ai" in argument:
-            filePath=argument
+            filePath = argument
 
     if filePath:
-        main(filePath,print_log=show_logs,generate_Python_code=generatePyCode)
+        main(filePath, print_log=show_logs, generate_Python_code=generatePyCode)
     else:
         print("JAVS Error :- File Path Not Specified, Or check the Extension")
     # print()
