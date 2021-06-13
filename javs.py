@@ -54,7 +54,8 @@ Command  :-
                 p := To generate Python code
 
                 l := To generate Log in command Line
-''')
+        ''')
+        
     filePath = None
     generatePyCode = False
     show_logs = False
