@@ -7,6 +7,7 @@
 \build
 \dist
 *.spec
-hook-numpy.py
+setup.py
 Win_Installer
 *.iss
+\output
