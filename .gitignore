@@ -11,3 +11,4 @@ setup.py
 Win_Installer
 *.iss
 \output
+\temp.ai

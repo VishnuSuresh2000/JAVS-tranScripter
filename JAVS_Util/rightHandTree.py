@@ -21,43 +21,58 @@
 
 class RightHandTree():
     def __init__(self):
-        self.left=None
-        self.right=None
-        self.data=None
-    
-    def insertNode(self,value):
-        if self.data is None:
+        self.left = None
+        self.right = None
+        self.data = None
+
+    def insertNode(self, value):
+        # print("need to add value ",value)
+        if self.data == None:
+            # print("Value added when None ", value)
+            self.data = value
+        elif "$" in self.data:
+            # print("node contain variable need to change ",self.data)
+            temp = self.data
             self.data=value
-        elif self.right is None:
-            # print("right is none ",value)
-            self.right=RightHandTree()
+            self.right=None
+            self.left = RightHandTree()
+            self.left.insertNode(temp)
+        elif self.right == None:
+            # print("Add to right value :- ",value, " Current parent :- ",self.data )
+            # print("Current tree :- ")
+            # self.PrintTree()
+            self.right = RightHandTree()
             self.right.insertNode(value=value)
         else:
-            if "$" in self.right.data:
-                # print("right is not none and $ ",value)
-                temp=self.right
-                self.right=RightHandTree()
-                self.right.insertNode(value=value)
-                self.right.left=temp
-            else:
-                # print("right is not none ",value)
-                self.right.insertNode(value)
-    def PrintTree(self,nodePostion="root",height=0):
+            self.right.insertNode(value=value)
+        # else:
+        #     self.right.insertNode(value=value)
+        # else:
+        #     if "$" in self.right.data:
+        #         # print("right is not none and $ ",value)
+        #         temp = self.right
+        #         self.right = RightHandTree()
+        #         self.right.insertNode(value=value)
+        #         self.right.left = temp
+        #     else:
+        #         # print("right is not none ",value)
+        #         self.right.insertNode(value)
+
+    def PrintTree(self, nodePostion="root", height=0):
         print(f'{self.data} : {nodePostion}, Height : {height}'),
         if self.left:
-            self.left.PrintTree(nodePostion="left",height=height+1)
+            self.left.PrintTree(nodePostion="left", height=height+1)
         if self.right:
-            self.right.PrintTree(nodePostion="right",height=height+1)
+            self.right.PrintTree(nodePostion="right", height=height+1)
 
     def makeTape(self):
-        tape=[]
+        tape = []
         while self.data is not None:
             tape.append(self.data)
             if self.left is not None:
                 tape.append(self.left.data)
             if self.right is not None:
-                self=self.right
+                self = self.right
             else:
                 break
         return tape
-

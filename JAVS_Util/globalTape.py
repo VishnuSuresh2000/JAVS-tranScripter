@@ -44,19 +44,24 @@ class GlobalTape:
                     global_Tape.append(tape)
                     if show_logs  : print("\nEnd of a sentence", "\nTape :- \n", tape, "\n")
                 else:
+                    # if str(current_Word).strip():
+                    #     print(current_Word)
+                    #     print("Numeric value ",current_Word)
                     if end_Of_a_Sentence:
                         if show_logs  : print("\nStarting of a sentence\n")
                         end_Of_a_Sentence = False
                         node = RightHandTree()
-                    elif catch_variable_value:
+                    if catch_variable_value:
                         catch_variable_value = False
                         current_Word = "$"+current_Word
                     elif str(current_Word).isnumeric():
+                        # print("Numeric value ",current_Word)
                         current_Word = "$"+current_Word
                     elif current_Word in env.env_Variables:
                         current_Word = "$"+current_Word
                     node.insertNode(current_Word)
-                    # print(current_Word)
+                    # print("Current Word :-",current_Word)
+                    # node.PrintTree()
         except StopIteration:
             if show_logs  : print("\nEnd of All the lines\n")
             if show_logs  : print("\nGlobal Tape :-\n", global_Tape)

@@ -30,7 +30,7 @@ class PreCheckFile:
                 final_String=[]
                 for index,line in enumerate(file.readlines()):
                     if line != "\n":
-                        if "." in line[-2]:
+                        if "." in line[-2] or "." in line[-1]:
                             final_String.append(line)
                         else:
                             raise DotError(index+1)
