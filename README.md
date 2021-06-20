@@ -3,6 +3,11 @@
 ---
 ## This is on development project  
 ---
+
+Beta Branch, giving support for string
+
+
+---
 Not a Production line project. Research based project which enables English can be used as Programming.
 
 To Test the Project :- 
