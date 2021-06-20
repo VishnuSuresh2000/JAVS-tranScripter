@@ -21,13 +21,35 @@
 
 import os
 import sys
-from JAVS_Util.exceptions import JAVSError
+from JAVS_Util.exceptions import JAVSError, StringNotCompleteError
 from JAVS_Util.preCheckFile import PreCheckFile
 from JAVS_Util.tokenize import Tokenize
 from JAVS_Util.globalTape import JAVSGlobalTape
 from JAVS_Util.machine import Machine
 from Env.arithmeticEnv import ArithmeticEnv
 
+# def betaCheckString(tokens):
+#     stringFlag=False
+#     stringVariable=""
+#     for word in tokens:
+#         if "'" == word:
+#             print("got ' ")
+#             stringFlag=not stringFlag
+#         elif "'" in word:
+#             print("got a word with ' ",word[1:])
+#             stringFlag=not stringFlag
+#             if stringFlag:
+#                 stringVariable=word[1:]
+#             else:
+#                 print("String Variable :- ",stringVariable)
+#         else:
+#             if stringFlag:
+#                 stringVariable=f'{stringVariable} {word}'
+#             else:
+#                 print("String Variable :- ",stringVariable)
+#             print(word)
+#     if stringFlag:
+#         raise StringNotCompleteError()
 
 def main(path, print_log=False, generate_Python_code=False):
     try:
@@ -36,6 +58,7 @@ def main(path, print_log=False, generate_Python_code=False):
         tokenize = Tokenize.make(input_string)
         if print_log:
             print("Tokenized Input :- ", tokenize)
+        # betaCheckString(tokenize)
         word_list = Tokenize.generateWordListFromEnv(ArithmeticEnv)
         # print(" World_list of Env :- ", word_list)
         # word_list=...(ArithmeticEnv.env_Variables)...ArithmeticEnv.env_Words_and_WordAsFunction.keys()

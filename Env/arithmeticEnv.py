@@ -19,14 +19,27 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+from array import ArrayType
+
+
 class ArithmeticEnv:
     def __init__(self):
         pass
+    '''
+    env_variables :- is a list of variables which act a variables with out '$' in the program
+
+    '''
+    env_Variables = ["result"]
+
+    
+    
+    
     '''
     Word As Function :- In here each word is assigned to an python function, which returns an python code as a string.
     In some sonorous some words have no functionalities in that case return "None"
 
     '''
+
     @staticmethod
     def addFun(*args):
         result = " ".join(
@@ -90,21 +103,28 @@ class ArithmeticEnv:
         return None
 
     @staticmethod
+    def stringFun(*args):
+        return None
+
+    @staticmethod
     def printFun(*args):
+        list_to_print=[]
+        for value in args:
+            if "$" in value:
+                if (value[1:] in ArithmeticEnv.env_Variables) or (str(value[1:]).isnumeric()):
+                    list_to_print.append(value[1:])
+                else:
+                    # print(f'{value[1:]}')
+                    list_to_print.append(f'"{value[1:]}"')
         result = " ".join(
-            ["print(", *[f'{x if "$" not in x else x[1:]}' for x in args], ")"])
+            ["print(", *[f'{x}' for x in list_to_print], ")"])
         return result
 
     @staticmethod
     def displayFun(*args):
         return ArithmeticEnv.printFun(*args)
 
-    '''
-    env_variables :- is a list of variables which act a variables with out '$' in the program
-
-    '''
-    env_Variables = ["result"]
-
+    
     '''
     env_Words_and_WordAsFunction :- is a key value paired Dictionary which each key corresponds to word that accepted by the ENV
     and the value is the function that defined 
@@ -112,4 +132,4 @@ class ArithmeticEnv:
     '''
     env_Words_and_WordAsFunction = {"add": addFun.__func__, "and": andFun.__func__, ",": commaFun.__func__, "print": printFun.__func__,
                                     "multiply": multiplyFun.__func__, "store": storeFun.__func__, "to": toFun.__func__, "in": inFun.__func__, "divide": divideFun.__func__, "by": byFun.__func__,
-                                    "display": displayFun.__func__, "the": theFun.__func__,'then':thenFun.__func__,'with':withFun.__func__}
+                                    "display": displayFun.__func__, "the": theFun.__func__,'then':thenFun.__func__,'with':withFun.__func__,"string":stringFun.__func__}

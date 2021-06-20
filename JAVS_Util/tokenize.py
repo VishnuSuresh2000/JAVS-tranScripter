@@ -33,19 +33,22 @@ class Tokenize:
     @staticmethod
     def make(input_string):
 
-        return np.array(nltk.word_tokenize(str(input_string).lower()))
+        return np.array(nltk.word_tokenize(str(input_string)))
 
     @staticmethod
     def checkAllWordsInEnv(words_list, env_words):
+        string_variable_Flag = False
         variableFlag=False
         for word in words_list:
             # if word not in env_words and "$" not in word and not str(word).isnumeric:
             #     raise WordNotFound(Word=word)
-            if '$' in word: 
+            if "'" in word:
+                string_variable_Flag=not string_variable_Flag
+            elif '$' in word: 
                 variableFlag=True
             elif variableFlag:
                 variableFlag=False
-            elif (word not in env_words) and (not str(word).isnumeric()) and ("." not in word):
+            elif (str(word).lower() not in env_words) and (not str(word).isnumeric()) and ("." not in word) and not string_variable_Flag:
                 raise WordNotFound(Word=word)
 
     @staticmethod

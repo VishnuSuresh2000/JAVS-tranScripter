@@ -31,7 +31,7 @@ class Machine:
                 if "$" in word :
                     variableBuffer.append(word)
                 else:
-                    result=env.env_Words_and_WordAsFunction[word](*variableBuffer)
+                    result=env.env_Words_and_WordAsFunction[str(word).lower()](*variableBuffer)
                     if result is not None:
                         pythonCodeSentence=[result,*pythonCodeSentence]
                         variableBuffer=[]

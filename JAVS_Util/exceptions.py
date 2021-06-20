@@ -59,3 +59,8 @@ class DotError(JAVSError):
     def __init__(self,line):
          self.message=f"End of the Line or '.' not Present in the Line - {line}"
          super().__init__(self.message)
+
+class StringNotCompleteError(JAVSError):
+    def __init__(self):
+         self.message=f"The String that given not complete, ' not found at the end"
+         super().__init__(self.message)
