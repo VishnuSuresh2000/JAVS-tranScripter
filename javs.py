@@ -24,7 +24,7 @@ import sys
 from JAVS_Util.exceptions import JAVSError
 from JAVS_Util.preCheckFile import PreCheckFile
 from JAVS_Util.tokenize import Tokenize
-from JAVS_Util.globalTape import GlobalTape
+from JAVS_Util.globalTape import JAVSGlobalTape
 from JAVS_Util.machine import Machine
 from Env.arithmeticEnv import ArithmeticEnv
 
@@ -40,7 +40,7 @@ def main(path, print_log=False, generate_Python_code=False):
         # print(" World_list of Env :- ", word_list)
         # word_list=...(ArithmeticEnv.env_Variables)...ArithmeticEnv.env_Words_and_WordAsFunction.keys()
         Tokenize.checkAllWordsInEnv(words_list=tokenize, env_words=word_list)
-        tape = GlobalTape.make(tokenize_Input=tokenize,
+        tape = JAVSGlobalTape.make(tokenize_Input=tokenize,
                                env=ArithmeticEnv, show_logs=print_log)
         # print("Tape :- ", tape)
         pyCode = Machine.generatePythonCode(tape, ArithmeticEnv)

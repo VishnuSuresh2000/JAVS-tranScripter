@@ -23,7 +23,7 @@ import numpy as np
 from .rightHandTree import RightHandTree
 
 
-class GlobalTape:
+class JAVSGlobalTape:
     @staticmethod
     def make(tokenize_Input: np.array,env, show_logs: bool = False):
         global_Tape = []
