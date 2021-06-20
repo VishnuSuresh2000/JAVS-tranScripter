@@ -26,6 +26,7 @@ from .rightHandTree import RightHandTree
 class JAVSGlobalTape:
     @staticmethod
     def make(tokenize_Input: np.array, env, show_logs: bool = False):
+        string_initial_constant="$~"
         global_Tape = []
         iterate_each_word = iter(tokenize_Input)
         catch_variable_value = False
@@ -44,12 +45,12 @@ class JAVSGlobalTape:
                         catch_string_variable = not catch_string_variable
                         if not catch_string_variable:
                             current_Word = string_variable
-                            string_variable = ""
+                            string_variable = f'{string_initial_constant}'
                             node.insertNode(current_Word)
                             # print("Current Word :-", current_Word)
                     else:
                         catch_string_variable = not catch_string_variable
-                        string_variable = f'${current_Word[1:]}'
+                        string_variable = f'{string_initial_constant}{current_Word[1:]}'
                 elif catch_string_variable:
                     string_variable = f'{string_variable} {current_Word}'
                 elif "." == current_Word and not end_Of_a_Sentence:

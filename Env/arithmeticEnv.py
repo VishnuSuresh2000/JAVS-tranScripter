@@ -109,15 +109,15 @@ class ArithmeticEnv:
     @staticmethod
     def printFun(*args):
         list_to_print=[]
-        for value in args:
+        for value in reversed(args):
             if "$" in value:
-                if (value[1:] in ArithmeticEnv.env_Variables) or (str(value[1:]).isnumeric()):
-                    list_to_print.append(value[1:])
-                else:
+                if "~" == value[1:2]:
                     # print(f'{value[1:]}')
-                    list_to_print.append(f'"{value[1:]}"')
+                    list_to_print.append(f'"{value[2:]}"')
+                else:
+                    list_to_print.append(value[1:])
         result = " ".join(
-            ["print(", *[f'{x}' for x in list_to_print], ")"])
+            ["print(", *[f'{x},' for x in list_to_print], ")"])
         return result
 
     @staticmethod
