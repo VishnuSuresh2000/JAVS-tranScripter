@@ -33,7 +33,7 @@ class JAVSGlobalTape:
         end_Of_a_Sentence = True
         node = None
         catch_string_variable = False
-        string_variable = ""
+        string_variable =f'{string_initial_constant}'
         try:
             while True:
                 current_Word = next(iterate_each_word)
