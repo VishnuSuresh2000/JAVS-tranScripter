@@ -41,13 +41,17 @@ python javs.py main.ai -l
 ```
 ---
 
-## Sample Input 
 
+
+## Sample input with String 
 ```
 Store 2 in $v1 then add 3 with $v1 and print the result .
 Add 3, 5 and $v1 .
 Print the result.
 Divide result by 4 and the display result.
+Store 2 in $v1, the add 5 with $v1.
+Print the string 'i am adding 2 with 5 and the result is ' and result .
+Add 5 and 4, then print the string '5 + 4 = ' and result. 
 ```
 
 
