@@ -29,9 +29,9 @@ class PreCheckFile:
             with open(file_path) as file:
                 final_String=[]
                 for index,line in enumerate(file.readlines()):
-                    print(line[-3:])
+                    # print(line[-3:])
                     if line != "\n":
-                        if "." in line[-3:]:
+                        if "." in str(line).replace("\n","")[-2:]:
                             final_String.append(line)
                         else:
                             
