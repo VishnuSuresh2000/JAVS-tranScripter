@@ -29,10 +29,12 @@ class PreCheckFile:
             with open(file_path) as file:
                 final_String=[]
                 for index,line in enumerate(file.readlines()):
+                    print(line[-3:])
                     if line != "\n":
-                        if "." in line[-2] or "." in line[-1]:
+                        if "." in line[-3:]:
                             final_String.append(line)
                         else:
+                            
                             raise DotError(index+1)
                 # print("".join(final_String))
                 return "".join(final_String)
