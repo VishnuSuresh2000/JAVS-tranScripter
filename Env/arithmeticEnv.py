@@ -63,9 +63,18 @@ class ArithmeticEnv:
 
     @staticmethod
     def storeFun(*args):
-        if len(args) == 2:
+        list_to_print=[]
+        for value in reversed(args):
+            if "$" in value:
+                if "~" == value[1:2]:
+                    # print(f'{value[1:]}')
+                    list_to_print.append(f'"{value[2:]}"')
+                else:
+                    list_to_print.append(value[1:])
+        if len(list_to_print) == 2:
             # if str(args[1]).isnumeric():
-            result = f'{args[0] if "$" not in args[0] else args[0][1:]}={args[1] if "$" not in args[1] else args[1][1:]}'
+            # result = f'{args[0] if "$" not in args[0] else args[0][1:]}={args[1] if "$" not in args[1] else args[1][1:]}'
+            result=f'{list_to_print[1]}={list_to_print[0]}'
             # else:
             # raise Exception("Second argument must be integer")
             return result
