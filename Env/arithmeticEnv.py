@@ -113,7 +113,7 @@ class ArithmeticEnv:
             if "$" in value:
                 if "~" == value[1:2]:
                     # print(f'{value[1:]}')
-                    list_to_print.append(f'"{value[3:]}"')
+                    list_to_print.append(f'"{value[2:]}"')
                 else:
                     list_to_print.append(value[1:])
         result = " ".join(

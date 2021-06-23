@@ -52,7 +52,10 @@ class JAVSGlobalTape:
                         catch_string_variable = not catch_string_variable
                         string_variable = f'{string_initial_constant}{current_Word[1:]}'
                 elif catch_string_variable:
-                    string_variable = f'{string_variable} {current_Word}'
+                    if len(str(string_variable))==2:
+                        string_variable = f'{string_variable}{current_Word}'
+                    else:
+                        string_variable = f'{string_variable} {current_Word}'
                 elif "." == current_Word and not end_Of_a_Sentence:
                     end_Of_a_Sentence = True
                     if show_logs:
