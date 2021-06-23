@@ -31,9 +31,6 @@ class ArithmeticEnv:
     '''
     env_Variables = ["result"]
 
-    
-    
-    
     '''
     Word As Function :- In here each word is assigned to an python function, which returns an python code as a string.
     In some sonorous some words have no functionalities in that case return "None"
@@ -63,7 +60,7 @@ class ArithmeticEnv:
 
     @staticmethod
     def storeFun(*args):
-        list_to_print=[]
+        list_to_print = []
         for value in reversed(args):
             if "$" in value:
                 if "~" == value[1:2]:
@@ -74,7 +71,7 @@ class ArithmeticEnv:
         if len(list_to_print) == 2:
             # if str(args[1]).isnumeric():
             # result = f'{args[0] if "$" not in args[0] else args[0][1:]}={args[1] if "$" not in args[1] else args[1][1:]}'
-            result=f'{list_to_print[1]}={list_to_print[0]}'
+            result = f'{list_to_print[1]}={list_to_print[0]}'
             # else:
             # raise Exception("Second argument must be integer")
             return result
@@ -84,9 +81,11 @@ class ArithmeticEnv:
     @staticmethod
     def theFun(*args):
         return None
+
     @staticmethod
     def withFun(*args):
         return None
+
     @staticmethod
     def thenFun(*args):
         return None
@@ -114,10 +113,21 @@ class ArithmeticEnv:
     @staticmethod
     def stringFun(*args):
         return None
+    
+    @staticmethod
+    def fromFun(*args):
+        return None
+
+    @staticmethod
+    def subtractFun(*args):
+        result = " ".join(
+            ["result =", *[f'{x if "$" not in x else x[1:]} -' for x in args]])
+        result = result[:-1]
+        return result
 
     @staticmethod
     def printFun(*args):
-        list_to_print=[]
+        list_to_print = []
         for value in reversed(args):
             if "$" in value:
                 if "~" == value[1:2]:
@@ -133,7 +143,6 @@ class ArithmeticEnv:
     def displayFun(*args):
         return ArithmeticEnv.printFun(*args)
 
-    
     '''
     env_Words_and_WordAsFunction :- is a key value paired Dictionary which each key corresponds to word that accepted by the ENV
     and the value is the function that defined 
@@ -141,4 +150,4 @@ class ArithmeticEnv:
     '''
     env_Words_and_WordAsFunction = {"add": addFun.__func__, "and": andFun.__func__, ",": commaFun.__func__, "print": printFun.__func__,
                                     "multiply": multiplyFun.__func__, "store": storeFun.__func__, "to": toFun.__func__, "in": inFun.__func__, "divide": divideFun.__func__, "by": byFun.__func__,
-                                    "display": displayFun.__func__, "the": theFun.__func__,'then':thenFun.__func__,'with':withFun.__func__,"string":stringFun.__func__}
+                                    "display": displayFun.__func__, "the": theFun.__func__, 'then': thenFun.__func__, 'with': withFun.__func__, "string": stringFun.__func__, "subtract": subtractFun.__func__,"from":fromFun.__func__}
