@@ -72,8 +72,8 @@ def main(path, print_log=False, generate_Python_code=False):
 
         Machine.executePyCode(pyCode)
         if generate_Python_code:
-            Machine.generatePyFile(os.path.split(
-                "main/document/main.ai")[-1][:-3], pyCode)
+            Machine.generatePyFile(os.path.split(path)[-1][:-3], pyCode)
+            # print(os.path.split(path))
     except JAVSError as jerror:
         print(jerror)
     except Exception as e:
