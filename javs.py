@@ -107,7 +107,7 @@ Command  :-
     show_logs = False
     show_Env_word=False
     for argument in arguments:
-        print(argument)
+        # print(argument)
         if "-" == argument[0]:
             if "p" in argument:
                 generatePyCode = True
