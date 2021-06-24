@@ -41,6 +41,10 @@ python javs.py main.ai -l
 ```
 ---
 
+\* To generate Env words 
+```
+python javs.py -envWords
+```
 
 
 ## Sample input with String 

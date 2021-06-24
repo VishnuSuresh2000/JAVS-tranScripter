@@ -98,25 +98,32 @@ Command  :-
                 p := To generate Python code
 
                 l := To generate Log in command Line
+
+                envWords := To get all words in Env 
         ''')
         
     filePath = None
     generatePyCode = False
     show_logs = False
+    show_Env_word=False
     for argument in arguments:
-
-        if ("-lp" in argument) or ("-pl" in argument):
-            generatePyCode = True
-            show_logs = True
-        elif "-p" in argument:
-            generatePyCode = True
-        elif "-l" in argument:
-            show_logs = True
+        if "-" in argument:
+            if "p" in argument:
+                generatePyCode = True
+            if "l" in argument:
+                show_logs = True
+            if "envWords" in argument:
+                show_Env_word=True
         elif ".ai" in argument:
             filePath = argument
 
     if filePath:
         main(filePath, print_log=show_logs, generate_Python_code=generatePyCode)
+    elif filePath == None and show_Env_word:
+        print(f'Env Name :- {ArithmeticEnv.name_of_Env}\n')
+        print(f'Words in the Env :-\n')
+        for words in Tokenize.generateWordListFromEnv(ArithmeticEnv):
+            print(f'{words}',end="\t")
     else:
         print("JAVS Error :- File Path Not Specified, Or check the Extension")
     # print()
