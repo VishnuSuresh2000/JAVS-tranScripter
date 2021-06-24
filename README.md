@@ -41,7 +41,7 @@ python javs.py main.ai -l
 ```
 ---
 
-\* To generate Env words 
+\* To generate Env words ** don't use any file
 ```
 python javs.py -envWords
 ```
