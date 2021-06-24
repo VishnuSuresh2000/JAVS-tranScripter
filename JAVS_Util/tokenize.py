@@ -28,8 +28,9 @@ class Tokenize:
     @staticmethod
     def initNLTK():
         try:
-            nltk.data.find('tokenizers/punkt.zip')
-        except Exception:
+            nltk.data.find('tokenizers/punkt')
+        except Exception as e:
+            # print(e)
             if not nltk.download('punkt',quiet=True):
                 raise NLTKError()
 
