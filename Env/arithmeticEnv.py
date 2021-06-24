@@ -19,17 +19,19 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-from array import ArrayType
+
 
 
 class ArithmeticEnv:
     def __init__(self):
         pass
+    
     '''
     env_variables :- is a list of variables which act a variables with out '$' in the program
 
     '''
     env_Variables = ["result"]
+    name_of_Env="ArithmeticEnv"
 
     '''
     Word As Function :- In here each word is assigned to an python function, which returns an python code as a string.
