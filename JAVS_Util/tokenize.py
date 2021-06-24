@@ -27,8 +27,14 @@ from .exceptions import *
 class Tokenize:
     @staticmethod
     def initNLTK():
-        if not nltk.download('punkt',quiet=True):
-            raise NLTKError()
+        try:
+            nltk.data.find('tokenizers/punkt.zip')
+        except Exception:
+            if not nltk.download('punkt',quiet=True):
+                raise NLTKError()
+
+
+        
 
     @staticmethod
     def make(input_string):
