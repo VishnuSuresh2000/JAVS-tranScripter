@@ -123,7 +123,7 @@ class ArithmeticEnv:
     @staticmethod
     def subtractFun(*args):
         result = " ".join(
-            ["result =", *[f'{x if "$" not in x else x[1:]} -' for x in args]])
+            ["result =", *[f'{x if "$" not in x else x[1:]} -' for x in reversed(args)]])
         result = result[:-1]
         return result
 
