@@ -22,6 +22,18 @@ To Test the Project :-
 ```
 pip install requirements.txt
 ```
+
+---
+For anaconda users 
+
+\* Open a shell and install all anaconda requirements 
+```
+conda env create -f environment.yml
+```
+---
+
+
+
 \* To test working of JAVS-tranScripter their is a same file with the zip called "main.ai".
 
 \* On the shell run this command (For linux users use python3 instead of python)
