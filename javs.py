@@ -107,14 +107,16 @@ Command  :-
     show_logs = False
     show_Env_word=False
     for argument in arguments:
-        if "-" in argument:
+        # print(argument)
+        if "-" == argument[0]:
             if "p" in argument:
                 generatePyCode = True
             if "l" in argument:
                 show_logs = True
             if "envWords" in argument:
                 show_Env_word=True
-        elif ".ai" in argument:
+        elif ".ai" in argument[-3:]:
+            # print(".ai find")
             filePath = argument
 
     if filePath:
